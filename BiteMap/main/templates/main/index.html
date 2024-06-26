@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "main/css/main.css" %}>
+    <title>Главная</title>
+</head>
+<body>
+    <div class="main">
+        <div class="top">
+          <div class="flex-wrapper-one">
+            <p><a href="{% url "home" %}" class="logo">BiteMap</a></p>
+            <div class="top-menu">
+              <a href="{% url 'tours'%}" class="top-btn">Туры</a>
+              <a href="{% url "aboutus" %}" class="top-btn">О нас</a>
+              <a href="{% url "cart" %}" class="top-btn">Корзина</a>
+            </div>
+          </div>
+          <p class="title">Туры за экзотическими блюдами</p>
+        </div>
+        <p class="about">
+          Добро пожаловать в мир BiteMap, где каждое путешествие обещает быть кулинарным открытием! Мы создаем неповторимые гастрономические туры, которые ведут вас в самые знаменитые и оригинальные рестораны планеты, славящиеся своими уникальными и захватывающими блюдами. Доверьтесь нам, чтобы исследовать волнующие кулинарные тропы, завоевывающие ваши сердца и остроту вкуса.
+        </p>
+      </div>
+      <script>
+        function redirectToTourInfo(element) {
+            var tourId = element.getAttribute('data-id');
+
+            window.location.href = `/tour-info/${tourId}/`;
+        }
+        </script>
+</body>
+</html>
